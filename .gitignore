@@ -1,0 +1,6 @@
+*~
+.ruby-version
+.bundle
+vender
+dbconfig.yaml
+config.yaml

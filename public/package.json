@@ -1,0 +1,15 @@
+{
+  "name": "postman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "webpack src/models/*.js src/menu.js src/postman-app.js postman-user.js -d --watch"
+  },
+  "author": "Kikuchi Ken",
+  "license": "MIT",
+  "dependencies": {
+    "mithril": "^1.0.1"
+  }
+}

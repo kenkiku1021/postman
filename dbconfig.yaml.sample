@@ -1,0 +1,5 @@
+db_driver: postgres
+db_host: localhost
+db_name: postman
+db_user: postman
+db_password: Gnaaueasn24aasj
