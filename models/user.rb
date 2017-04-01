@@ -67,7 +67,6 @@ class User < Sequel::Model
       raise "空のパスワードは指定できません。"
     end
     self[:password] = new_password.to_s
-    self.save
   end
   
   def my_address
