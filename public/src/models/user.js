@@ -149,4 +149,21 @@ var User = {
     }
 };
 
+User.create = function(username, password) {
+    var data = new FormData();
+    data.append("username", username);
+    data.append("password", password);
+    m.request({method: "POST",
+	       url: "admin/user",
+	       serialize: function(data) { return data; },
+	       data: data})
+	.then(function(result) {
+	    alert("ユーザを追加しました。");
+	})
+	.catch(function(error) {
+	    alert("ユーザの追加に失敗しました。");
+	    console.log(error);
+	});
+};
+
 module.exports = User;

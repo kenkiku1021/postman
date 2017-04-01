@@ -16,11 +16,15 @@ class User < Sequel::Model
 
   EMAIL_REGEXP = /\A[A-Za-z0-9+_\-.]+@[A-Za-z0-9+_\-.]+\Z/
   PLAIN_SCHEME = "{plain}"
+  MIN_PASSWORD_LEN = 6
 
   def validate
     super
     validates_presence [:username], :message => "ユーザ名が指定されていません。"
+    validates_presence [:password], :message => "パスワードが指定されていません。"
     validates_presence [:home_dir], :message => "ホームディレクトリが指定されていません。"
+    validates_unique :username, :message => "指定されたユーザ名はすでに登録されています。"
+    validates_min_length MIN_PASSWORD_LEN, :password, :message => "パスワードは#{MIN_PASSWORD_LEN}文字以上で指定してください。"
     validates_includes [PLAIN_SCHEME], :password_scheme, :message => "指定されたパスワード形式はサポートされていません。"
     if username
       if uid.nil? || gid.nil?

@@ -1,3 +1,4 @@
+# coding: utf-8
 module AdminHelper
   def protected!
     return if authorized?
@@ -17,5 +18,13 @@ module AdminHelper
   def auth(user, password)
     config = PostmanConfig.instance
     config.admin_auth(user, password)
+  end
+
+  def get_user
+    user = User.find_by_username(params[:username])
+    if user.nil?
+      raise "指定されたユーザは存在しません。"
+    end
+    user
   end
 end
