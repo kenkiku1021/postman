@@ -2,11 +2,9 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem "rack"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "sequel"
 gem "sequel_db_config"
 gem "pg"
 gem "mail"
-gem "thin"
