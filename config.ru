@@ -1,3 +1,4 @@
+require "bundler"
 Bundler.require
 
 DB = Sequel.connect(SequelDbConfig::Config.instance.connection_string)
