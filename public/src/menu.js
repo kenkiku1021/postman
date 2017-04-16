@@ -101,7 +101,7 @@ var Menu = {
 				  {onkeyup: m.withAttr("value",
 						       User.forward_address),
 				   value: User.forward_address(),
-				   disabled: User.forwarded(),
+				   disabled: !User.forwarded(),
 				   readonly: !User.forwarded()}),
 			    ]),
 			]),
