@@ -51,6 +51,7 @@ class UserController < ApplicationController
   post "/passwd" do
     protected!
     @user.password = params[:new_password]
+    @user.save
     json({:result => true})
   end
 
