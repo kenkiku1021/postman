@@ -2,7 +2,7 @@
 module AdminHelper
   def protected!
     return if authorized?
-    headers['WWW-Authenticate'] = 'Basic "realm=Postman-Admin"'
+    headers['WWW-Authenticate'] = 'Basic realm="Postman-Admin"'
     halt 401, "Not Authorized\n"
   end
 
